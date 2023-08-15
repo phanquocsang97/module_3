@@ -49,7 +49,7 @@ values
 ("Quat",1),
 ("Bep dien",2);
 
-insert into order_detail(order_id,product_id,order_detail_quantity)
+insert into orders_detail(order_id,product_id,order_detail_quantity)
 values
 (1,1,3),
 (1,3,7),
@@ -70,10 +70,10 @@ select customers.customer_name,products.product_name
 from customers
 join orders
 on customers.customer_id = orders.customer_id
-join order_detail
-on orders.order_id = order_detail.order_id
+join orders_detail
+on orders.order_id = orders_detail.order_id
 join products
-on order_detail.product_id = products.product_id;
+on orders_detail.product_id = products.product_id;
 
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
 select customers.customer_name
@@ -83,13 +83,13 @@ on customers.customer_id = orders.customer_id
 where orders.customer_id is null;
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn
-select order_detail.order_id,orders.order_date,sum(order_detail.order_detail_quantity * products.product_price) as total_product_price
+select orders_detail.order_id,orders.order_date,sum(orders_detail.order_detail_quantity * products.product_price) as total_product_price
 from orders
-join order_detail
-on orders.order_id = order_detail.order_id
+join orders_detail
+on orders.order_id = orders_detail.order_id
 join products
-on order_detail.product_id = products.product_id
-group by order_detail.order_id;
+on orders_detail.product_id = products.product_id
+group by orders_detail.order_id;
 
 
 
