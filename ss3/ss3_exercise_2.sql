@@ -21,7 +21,7 @@ product_name varchar(50),
 product_price int
 );
 
-create table order_detail(
+create table orders_detail(
 order_id int,
 product_id int,
 order_detail_quantity int,
