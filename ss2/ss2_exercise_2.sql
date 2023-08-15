@@ -7,7 +7,7 @@ customer_name varchar(50),
 customer_age int
 );
 
-create table `orders`(
+create table orders(
 order_id int primary key auto_increment,
 customer_id int,
 order_date date,
@@ -21,11 +21,11 @@ product_name varchar(50),
 product_price int
 );
 
-create table order_detail(
+create table orders_detail(
 order_id int,
 product_id int,
 order_detail_quantity int,
-foreign key(order_id) references `orders`(order_id),
+foreign key(order_id) references orders(order_id),
 foreign key(product_id) references products(product_id)
 ); 
 
