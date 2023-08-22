@@ -1,0 +1,140 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#menu {
+    height: 40px;
+    padding-top: 10px;
+    margin: 0;
+    background-color: #000000;
+    border: 1px solid #CDCDCD;
+    color: slategray;
+}
+
+#menu ul, #menu li {
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li a {
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+
+#menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#menu li a:hover {
+    background-color: red;
+    color: slategray;
+}
+
+#menu ul ul {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    visibility: hidden;
+}
+
+#menu ul li:hover ul {
+    visibility: visible;
+}
+
+#sidebar_1 {
+    background-color: whitesmoke;
+    height: 500px;
+    width: 20%;
+    float: left;
+}
+
+#sidebar_2 {
+    background-color: whitesmoke;
+    height: 500px;
+    width: 20%;
+    float: right;
+}
+
+#main {
+    background-color: white;
+    height: 500px;
+    width: 60%;
+    position: relative;
+    left: 20px;
+    float: left;
+}
+
+#footer {
+    background-color: gray;
+    color: white;
+    height: 50px;
+    width: 100%;
+    clear: both;
+    position: relative;
+}
+
+hr {
+    margin-right: 15px;
+}
+
+#login {
+    right: 0;
+    padding: 5px;
+    margin-right: 5px;
+    float: right;
+    color: whitesmoke;
+    font-family: "Arial Black", sans-serif;
+}
+
+#login:hover {
+    background-color: blue;
+}
+
+button {
+    position: relative;
+    left: 65px;
+    margin-top: 20px;
+    width: 60%;
+    height: 80px;
+}
+
+.link_sidebar1 {
+    position: relative;
+    padding: 20px 120px 5px;
+}
+
+.link_sidebar2 {
+    position: relative;
+    padding: 5px 120px;
+}
+
+.link_sidebar3 {
+    position: relative;
+    padding: 5px 120px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h4 {
+    text-align: center;
+    padding-top: 15px;
+}
