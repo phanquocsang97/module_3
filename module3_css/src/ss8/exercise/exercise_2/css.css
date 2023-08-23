@@ -1,0 +1,15 @@
+.nav_head{
+    text-align: center;
+    margin: 15px;
+    background: white;
+    border-right: 2px solid black;
+}
+
+.c-image{
+    width: 50%;
+    height: 50%;
+}
+.nav-item{
+    margin: 0;
+    font-size: 100%;
+}
