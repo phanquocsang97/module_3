@@ -13,3 +13,34 @@
     margin: 0;
     font-size: 100%;
 }
+.link a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.link a:hover{
+    text-decoration: underline;
+}
+.image{
+    width: 10%;
+    height: auto;
+}
+.col-md-3{
+    margin-top: 10px;
+}
+.card-title{
+    font-size: 80px;
+}
+.card-text{
+    font-size: 15px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.title h2{
+    display: inline-block;
+}
