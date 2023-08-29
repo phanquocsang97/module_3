@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="get">
+<form action="/calculator" method="get">
     <fieldset>
         <legend>calculator</legend>
         <table>
@@ -41,10 +41,9 @@
                 <td></td>
                 <td>
                     <input type="submit" value="Calculate">
-                    <div>Result: <label name="${result}}"></label></div>
+                    <div>Result: ${result}</div>
                 </td>
             </tr>
-
         </table>
     </fieldset>
 </form>
