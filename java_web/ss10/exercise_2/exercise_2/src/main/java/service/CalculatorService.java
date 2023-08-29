@@ -15,8 +15,12 @@ public class CalculatorService implements ICalculatorService {
                 result = firstOperand * secondOperand;
                 break;
             case "/":
+                if (secondOperand==0){
+                    throw new RuntimeException("Không thực hiện được phép chia!!");
+                }
                 result = firstOperand / secondOperand;
                 break;
+
         }
         return result;
     }

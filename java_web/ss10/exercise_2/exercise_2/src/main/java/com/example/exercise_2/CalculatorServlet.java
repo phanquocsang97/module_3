@@ -18,12 +18,20 @@ public class CalculatorServlet extends HttpServlet {
         double firstOperand = Double.parseDouble(request.getParameter("firstOperand"));
         String operator = request.getParameter("operator");
         double secondOperand = Double.parseDouble(request.getParameter("secondOperand"));
-        double result = calculatorService.calculate(firstOperand, secondOperand, operator);
-        request.setAttribute("firstOperand", firstOperand);
-        request.setAttribute("operator", operator);
-        request.setAttribute("secondOperand", secondOperand);
-        request.setAttribute("result", result);
-        request.getRequestDispatcher("/calculator.jsp").forward(request, response);
+        String warning = "";
+        try {
+            double result = calculatorService.calculate(firstOperand, secondOperand, operator);
+            request.setAttribute("firstOperand", firstOperand);
+            request.setAttribute("operator", operator);
+            request.setAttribute("secondOperand", secondOperand);
+            request.setAttribute("result", result);
+            request.getRequestDispatcher("/calculator.jsp").forward(request, response);
+        }catch (Exception e) {
+            warning = e.getMessage();
+            request.setAttribute("warning",warning);
+            request.getRequestDispatcher("/calculator.jsp").forward(request, response);
+        }
+
     }
 
     @Override

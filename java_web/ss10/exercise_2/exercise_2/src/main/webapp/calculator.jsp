@@ -41,7 +41,9 @@
                 <td></td>
                 <td>
                     <input type="submit" value="Calculate">
-                    <div>Result: ${result}</div>
+                    <h2>Result:</h2>
+                    ${warning}
+                    ${firstOperand} ${operator} ${secondOperand} = ${result}
                 </td>
             </tr>
         </table>
