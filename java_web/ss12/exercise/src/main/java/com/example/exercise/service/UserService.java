@@ -38,4 +38,9 @@ public class UserService implements IUserService{
     public List<User> searchUser(String name) {
         return userRepository.searchUser("%"+name+"%");
     }
+
+    @Override
+    public void addUserTransaction(User user) {
+        userRepository.addUserTransaction(user);
+    }
 }

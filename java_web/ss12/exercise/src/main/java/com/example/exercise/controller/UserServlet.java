@@ -27,6 +27,9 @@ public class UserServlet extends HttpServlet {
 
         try {
             switch (action) {
+                case "show-list":
+                    showList(request, response);
+                    break;
                 case "create":
                     showAddForm(request, response);
                     break;
@@ -38,9 +41,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "search":
                     showFormSearch(request,response);
-                default:
-                    showList(request, response);
-                    break;
             }
         }catch (SQLException e){
             throw new ServletException(e);
@@ -99,9 +99,25 @@ public class UserServlet extends HttpServlet {
                 case "search":
                     searchUser(request,response);
                     break;
+                case "add-transaction":
+                    addWithTransaction(request, response);
+                    break;
             }
         }catch (SQLException e){
             throw new ServletException(e);
+        }
+    }
+
+    private void addWithTransaction(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String country = request.getParameter("country");
+        User user = new User(name, email, country);
+        this.userService.addUserTransaction(user);
+        try {
+            response.sendRedirect("/users?action=show-list");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

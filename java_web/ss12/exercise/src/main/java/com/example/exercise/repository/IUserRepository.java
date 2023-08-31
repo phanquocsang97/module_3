@@ -13,4 +13,5 @@ public interface IUserRepository {
     boolean updateUser(User user) throws SQLException;
 
     List<User> searchUser(String name);
+    void addUserTransaction(User user);
 }
